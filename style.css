@@ -1,0 +1,531 @@
+
+/* ================= DRIVE MART: BASE ================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding-top: 76px;
+    background: #f5f7fb;
+    color: #172033;
+    font-family: 'Poppins', Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ================= NAVBAR ================= */
+
+.custom-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030;
+    background: #101827;
+    box-shadow: 0 4px 22px rgba(15, 23, 42, 0.16);
+}
+
+.navbar-brand {
+    color: #fff !important;
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+}
+
+.nav-link {
+    color: #e5e7eb !important;
+    margin-left: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color .2s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: #60a5fa !important;
+}
+
+/* ================= HERO ================= */
+
+.hero-premium {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 570px;
+    padding: 75px 0;
+    background-color: #17243b;
+    background-image: url("../images/hero.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.hero-premium .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(8, 17, 35, .94) 0%,
+        rgba(8, 17, 35, .76) 48%,
+        rgba(8, 17, 35, .22) 100%
+    );
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    color: #fff;
+}
+
+.hero-badge {
+    display: inline-block;
+    margin-bottom: 22px;
+    padding: 9px 16px;
+    border: 1px solid rgba(255, 255, 255, .22);
+    border-radius: 50px;
+    background: rgba(255, 255, 255, .12);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.hero-content h1 {
+    max-width: 650px;
+    margin: 0;
+    color: #fff;
+    font-size: clamp(38px, 5vw, 62px);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -1.5px;
+}
+
+.hero-content p {
+    max-width: 610px;
+    margin: 22px 0 28px;
+    color: #e5eaf3;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.hero-buttons .btn {
+    min-height: 48px;
+    padding: 13px 24px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* ================= SEARCH ================= */
+
+.search-wrapper {
+    position: relative;
+    z-index: 5;
+    margin-top: -42px;
+    margin-bottom: 48px;
+}
+
+.search-glass {
+    padding: 23px;
+    border: 1px solid #e9edf4;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 15px 45px rgba(18, 35, 65, .12);
+}
+
+.search-glass .row {
+    align-items: stretch;
+}
+
+.search-glass .form-control,
+.search-glass .form-select {
+    width: 100%;
+    min-width: 0;
+    height: 50px;
+    border: 1px solid #dce2ec;
+    border-radius: 9px;
+    background-color: #fff;
+    font-size: 14px;
+}
+
+.search-glass .form-control:focus,
+.search-glass .form-select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, .12);
+}
+
+.search-glass button {
+    min-height: 50px;
+    border-radius: 9px;
+}
+
+/* ================= SECTIONS ================= */
+
+.section-title {
+    margin: 38px 0 24px;
+    color: #172033;
+    font-size: clamp(25px, 3vw, 34px);
+    font-weight: 800;
+    letter-spacing: -.7px;
+}
+
+.container > .row {
+    min-width: 0;
+}
+
+/* ================= CAR CARDS ================= */
+
+.car-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid #e8edf4;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 5px 20px rgba(18, 35, 65, .06);
+    transition: transform .22s ease, box-shadow .22s ease;
+}
+
+.car-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px rgba(18, 35, 65, .12);
+}
+
+.car-card > img {
+    display: block;
+    width: 100%;
+    height: 205px;
+    flex: 0 0 205px;
+    object-fit: cover;
+    object-position: center;
+    background: #eef2f7;
+}
+
+/* Scoped to car cards so Bootstrap components elsewhere stay unaffected. */
+.car-card > .card-body {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 0;
+    padding: 17px;
+}
+
+.badge-custom {
+    display: inline-block;
+    align-self: flex-start;
+    width: fit-content;
+    padding: 6px 10px;
+    border-radius: 20px;
+    background: #e8f1ff;
+    color: #2059b5;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.car-card .car-title {
+    margin: 10px 0 0;
+    color: #172033;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.car-card .specs {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 10px 7px;
+    margin: 17px 0;
+    color: #687386;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.car-card .specs > div {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.car-card .price {
+    margin-top: auto;
+    color: #2459d3;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+.car-card .btn {
+    display: block;
+    width: 100%;
+    margin-top: 14px;
+    padding: 11px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* ================= BUTTONS ================= */
+
+.btn-primary {
+    border: 1px solid #2459d3;
+    border-radius: 9px;
+    background: #2459d3;
+    color: #fff;
+    font-weight: 600;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    border-color: #1947b0;
+    background: #1947b0;
+    color: #fff;
+}
+
+.btn-light {
+    border-radius: 9px;
+    font-weight: 600;
+}
+
+/* ================= POPULAR BRANDS ================= */
+
+.brand-logo {
+    height: 100%;
+    padding: 18px 10px;
+    border: 1px solid #e8edf4;
+    border-radius: 12px;
+    background: #fff;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(18, 35, 65, .04);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.brand-logo:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(18, 35, 65, .09);
+}
+
+.brand-logo img {
+    display: block;
+    width: 100%;
+    max-width: 75px;
+    height: 55px;
+    margin: 0 auto 10px;
+    object-fit: contain;
+}
+
+.brand-logo p {
+    margin: 0;
+    color: #354158;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Existing homepage brand markup doesn't use .brand-logo.
+   These rules style its images safely without enlarging them. */
+.container > .row.text-center.g-4.mb-5 img {
+    display: block;
+    width: 70px;
+    max-width: 100%;
+    height: 55px;
+    margin: 0 auto 9px;
+    object-fit: contain;
+}
+
+.container > .row.text-center.g-4.mb-5 p {
+    margin-bottom: 0;
+    color: #354158;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* ================= STATISTICS ================= */
+
+.stat-box {
+    height: 100%;
+    padding: 24px 15px;
+    border: 1px solid #e8edf4;
+    border-radius: 13px;
+    background: #fff;
+    text-align: center;
+    box-shadow: 0 5px 18px rgba(18, 35, 65, .05);
+}
+
+.stat-box h2 {
+    margin-bottom: 8px;
+    color: #2459d3;
+    font-weight: 800;
+}
+
+.container > .row.text-center.mb-5 h2 {
+    font-size: 30px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+    margin-top: 65px;
+    padding: 42px 0;
+    background: #101827;
+    color: #fff;
+}
+
+.footer a {
+    color: #cbd5e1;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #fff;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (min-width: 1200px) {
+    .car-card > img {
+        height: 195px;
+        flex-basis: 195px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .hero-premium {
+        min-height: 510px;
+    }
+
+    .hero-content h1 {
+        font-size: 46px;
+    }
+
+    .car-card > img {
+        height: 200px;
+        flex-basis: 200px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    body {
+        padding-top: 70px;
+    }
+
+    .hero-premium {
+        min-height: 475px;
+        padding: 55px 0;
+        text-align: center;
+        background-position: 58% center;
+    }
+
+    .hero-content {
+        padding: 0 18px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(34px, 8vw, 43px);
+        letter-spacing: -.7px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-buttons .btn {
+        min-width: 145px;
+    }
+
+    .search-wrapper {
+        margin-top: -25px;
+        margin-bottom: 30px;
+    }
+
+    .search-glass {
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    .section-title {
+        margin-top: 32px;
+        text-align: center;
+    }
+
+    .car-card > img {
+        height: 175px;
+        flex-basis: 175px;
+    }
+
+    .car-card > .card-body {
+        padding: 13px;
+    }
+
+    .car-card .car-title {
+        font-size: 16px;
+    }
+
+    .car-card .specs {
+        gap: 8px 5px;
+        font-size: 11px;
+    }
+
+    .car-card .price {
+        font-size: 21px;
+    }
+
+    .container > .row.text-center.mb-5 h2 {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 420px) {
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .car-card > img {
+        height: 145px;
+        flex-basis: 145px;
+    }
+
+    .car-card > .card-body {
+        padding: 10px;
+    }
+
+    .car-card .price {
+        font-size: 18px;
+    }
+}
